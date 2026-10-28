@@ -1,0 +1,327 @@
+:root {
+  /* Dark red & Burgundy Romantic Aesthetic Palette */
+  --deep-dark-red: #3B0008;
+  --burgundy: #5A0010;
+  --dark-wine: #240006;
+  --crimson-subtle: #8B0018;
+  --crimson-bright: #C9002B;
+  --crimson-glow: rgba(201, 0, 43, 0.45);
+  --deepest-wine: #150003;
+  --text-romantic: #FFF0F2;
+  --text-soft: #E8B4BC;
+  --text-dim: #9E646E;
+
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-handwritten: 'Great Vibes', 'Alex Brush', cursive;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  height: 100svh;
+  overflow: hidden;
+  background-color: var(--deepest-wine);
+  color: var(--text-romantic);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  height: 100svh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Atmospheric film grain overlay for cinematic texture */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Subtle Vignette for intimate framing */
+.vignette-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(36, 0, 6, 0) 45%,
+    rgba(21, 0, 3, 0.35) 75%,
+    rgba(10, 0, 2, 0.65) 100%
+  );
+}
+
+/* Smooth Heartbeat Keyframes */
+@keyframes romanticHeartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.022);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.028);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Gentle Emoji Drift Animations */
+@keyframes floatDriftA {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate3d(12px, -24px, 0) rotate(4deg);
+  }
+  66% {
+    transform: translate3d(-10px, -46px, 0) rotate(-3deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes floatDriftB {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  40% {
+    transform: translate3d(-18px, 18px, 0) rotate(-5deg);
+  }
+  75% {
+    transform: translate3d(14px, 32px, 0) rotate(4deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes floatDriftC {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(16px, -18px, 0) rotate(6deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+/* Subtle Photo Ambient Breathing */
+@keyframes photoBreathe {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.018) translateY(-6px);
+  }
+}
+
+/* Soft Crimson Heading Glow Pulse */
+@keyframes crimsonGlowPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 25px rgba(201, 0, 43, 0.45),
+      0 0 50px rgba(139, 0, 24, 0.35),
+      0 0 80px rgba(90, 0, 16, 0.25),
+      0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    text-shadow:
+      0 0 35px rgba(201, 0, 43, 0.65),
+      0 0 65px rgba(139, 0, 24, 0.5),
+      0 0 100px rgba(90, 0, 16, 0.35),
+      0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Shake Animation for incorrect passcode */
+@keyframes shakeError {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  15%, 45%, 75% {
+    transform: translateX(-7px);
+  }
+  30%, 60%, 90% {
+    transform: translateX(7px);
+  }
+}
+
+/* Heart Lock Pulse */
+@keyframes lockPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 12px rgba(201, 0, 43, 0.4));
+  }
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 22px rgba(201, 0, 43, 0.7));
+  }
+}
+
+/* Unlock Burst Animation */
+@keyframes unlockBurst {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 40px rgba(255, 77, 109, 0.9));
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Floating Upward Hearts Animation */
+@keyframes floatUpward {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+/* Surprise Glowing Heart Breathing Pulse */
+@keyframes surpriseHeartGlow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(201, 0, 43, 0.55)) drop-shadow(0 0 40px rgba(139, 0, 24, 0.35));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 35px rgba(255, 77, 109, 0.8)) drop-shadow(0 0 65px rgba(201, 0, 43, 0.6));
+  }
+}
+
+/* Surprise Page Entrance Transition */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Staggered Photo Reveal Animation */
+@keyframes frameFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Final Message Glow Pulse */
+@keyframes favoritePersonGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 25px rgba(255, 77, 109, 0.6),
+      0 0 50px rgba(201, 0, 43, 0.45),
+      0 0 85px rgba(139, 0, 24, 0.35),
+      0 2px 12px rgba(0, 0, 0, 0.9);
+  }
+  50% {
+    text-shadow:
+      0 0 38px rgba(255, 105, 135, 0.85),
+      0 0 70px rgba(201, 0, 43, 0.65),
+      0 0 110px rgba(139, 0, 24, 0.5),
+      0 2px 12px rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* Subtle Message Fade-In with Upward Movement */
+@keyframes messageFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Floating Ambient Glowing Particles */
+@keyframes particleGlow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: translate3d(0, 0, 0) scale(0.85);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translate3d(6px, -15px, 0) scale(1.35);
+  }
+}
+
+/* Crimson Glow Pulse for Handwritten Surprise Confession */
+@keyframes messageCrimsonGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 20px rgba(255, 77, 109, 0.55),
+      0 0 45px rgba(201, 0, 43, 0.45),
+      0 0 75px rgba(139, 0, 24, 0.35),
+      0 2px 10px rgba(0, 0, 0, 0.85);
+  }
+  50% {
+    text-shadow:
+      0 0 32px rgba(255, 105, 135, 0.8),
+      0 0 65px rgba(201, 0, 43, 0.65),
+      0 0 95px rgba(139, 0, 24, 0.5),
+      0 2px 10px rgba(0, 0, 0, 0.85);
+  }
+}
+
+
